@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Empleado</title>
+</head>
+<header>
+    
+</header>
+<body>
+{% for producto in productos %}
+<form method="post" action="/update" enctype="multipart/form-data">
+<div class="card">
+    <div class="card-header">
+        Modificar producto
+    </div>
+ 
+ <div class="card-body">
+      <label hidden for="txtID">ID: </label>
+      <input hidden type="text" value="{{ producto[0] }}" name="txtID" id="txtID">  
+    <div class="form-group">
+     <p>
+      <label for="txtNombre">Nombre: </label>
+      <input type="text" value="{{ producto[1] }}" name="txtNombre" id="txtNombre"></p>
+    </div>
+    <div class="form-group">
+        <p>
+         <label for="txtDescripcion">Descripcion: </label>
+         <input type="text" value="{{ producto[2] }}" name="txtDescripcion" id="txtDescripcion"></p>
+       </div>
+    <div class="form-group">
+     <p>
+      <label for="txtPrecio">Precio: </label>
+      <input type="text" value="{{ producto[3] }}" name="txtPrecio" id="txtPrecio"></p>
+    </div>
+    <div class="form-group">
+     <p>
+      <label for="txtFoto">Foto: </label>
+      <input type="file" value="{{ producto[4] }}" name="txtFoto" id="txtFoto"></p>
+    </div>
+ 
+ 
+ <br>
+ <br>
+ <input class="btn btn-success" type="submit" value="Confirmar">
+ </div>
+</div> 
+</form>
+{% endfor %}    
+</body>
+</html>
